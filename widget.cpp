@@ -6,6 +6,8 @@ Widget::Widget(QWidget *parent)
     , ui(new Ui::Widget)
 {
     ui->setupUi(this);
+    connect(ui->on_pushButton, SIGNAL(clicked()), this, SLOT(change_text()));
+    ui->on_pushButton->setText(on_light);
     ui->on_picture->hide();
     ui->off_picture->hide();
 }
@@ -15,16 +17,26 @@ Widget::~Widget()
     delete ui;
 }
 
-void Widget::on_on_pushButton_clicked()
+void Widget::change_text()
 {
-    ui->on_picture->show();
-    ui->off_picture->hide();
+
+    if (ui->on_pushButton->text()==(on_light))
+    {
+        ui->on_pushButton->setText(off_light);
+        ui->on_picture->show();
+        ui->off_picture->hide();
+    }
+    else{
+        ui->on_pushButton->setText(on_light);
+        ui->on_picture->hide();
+        ui->off_picture->show();
+    }
+
+
 }
 
 
-void Widget::on_off_pushButton_clicked()
-{
-    ui->on_picture->hide();
-    ui->off_picture->show();
-}
+
+
+
 

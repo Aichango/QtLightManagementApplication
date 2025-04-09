@@ -2,6 +2,8 @@
 #define WIDGET_H
 
 #include <QWidget>
+#include <QPushbutton>
+#include <QDebug>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -17,12 +19,17 @@ public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
 
-private slots:
-    void on_on_pushButton_clicked();
+    QString on_light = "开灯!";
+    QString off_light = "关灯!";
 
-    void on_off_pushButton_clicked();
+
+private slots:
+
+    void change_text();
+
 
 private:
     Ui::Widget *ui;
+    QPushButton on_pushButton;
 };
 #endif // WIDGET_H

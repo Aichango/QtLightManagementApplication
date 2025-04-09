@@ -16,8 +16,8 @@
   <widget class="QPushButton" name="on_pushButton">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>390</y>
+     <x>300</x>
+     <y>400</y>
      <width>93</width>
      <height>28</height>
     </rect>
@@ -25,18 +25,11 @@
    <property name="text">
     <string>开灯</string>
    </property>
-  </widget>
-  <widget class="QPushButton" name="off_pushButton">
-   <property name="geometry">
-    <rect>
-     <x>470</x>
-     <y>380</y>
-     <width>93</width>
-     <height>28</height>
-    </rect>
+   <property name="autoDefault">
+    <bool>true</bool>
    </property>
-   <property name="text">
-    <string>关灯</string>
+   <property name="default">
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="on_picture">
